@@ -12,7 +12,7 @@ const About = ()=>{
                 <p className="px-[4rem] pt-[1rem]">Our mission at ArtHub is to democratize the art world by providing a inclusive and accessible platform for artists of all backgrounds and disciplines. We believe that art has the power to inspire, provoke thought, and spark conversation, and we're dedicated to fostering a community where creativity knows no bounds.</p>
 
                 <h1 className="text-lg font-semibold text-center pt-[2rem]">Who We Are</h1>
-                <p className="px-[4rem] pt-[1rem]">ArtHub was founded by a team of art enthusiasts, tech innovators, and creative minds who saw an opportunity to revolutionize the way art is bought, sold, and experienced in the digital age. With diverse expertise in art curation, e-commerce, and community building, we're committed to building a platform that meets the evolving needs of artists and art lovers alike..</p>
+                <p className="px-[4rem] pt-[1rem]">Huehub was founded by a team of art enthusiasts, tech innovators, and creative minds who saw an opportunity to revolutionize the way art is bought, sold, and experienced in the digital age. With diverse expertise in art curation, e-commerce, and community building, we're committed to building a platform that meets the evolving needs of artists and art lovers alike..</p>
 
                 <h1 className="text-lg font-semibold text-center pt-[2rem]">Our Values</h1>
                 <p className="px-[4rem] pt-[1rem]">At ArtHub, our values guide everything we do:
