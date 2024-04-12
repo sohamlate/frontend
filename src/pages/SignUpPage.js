@@ -113,7 +113,7 @@ const SignUpPage = ({setIsLoggedIn})=>{
                         value ={ formData.password}
                         onChange={changeHandler}
                     />
-                    <div onClick={()=>{Setvisible(!visible)}} className="cursor-pointer absolute mt-[-1.6rem] lg:ml-[8rem] xl:ml-[9.5rem] " >
+                    <div onClick={()=>{Setvisible(!visible)}} className="cursor-pointer absolute mt-[-1.6rem] ml-[8rem] " >
                         {visible?   <FaRegEye />  : <FaRegEyeSlash />}
                     </div>
                 </div>
