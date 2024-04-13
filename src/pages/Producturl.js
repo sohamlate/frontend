@@ -22,7 +22,7 @@ const Producturl = ({user}) => {
     try {
 
       const response = await axios.post(
-        "http://localhost:4000/api/v1/product/getproductdetail",
+        "https://backend-1-9nhi.onrender.com/api/v1/product/getproductdetail",
         {productId}
         );
         setitem(response.data.productDetails[0]);
@@ -39,7 +39,7 @@ const Producturl = ({user}) => {
     const showCart = async (e) => {
       try {
         const response = await axios.post(
-          "http://localhost:4000/api/v1/product/displayCartItem",{userID}
+          "https://backend-1-9nhi.onrender.com/api/v1/product/displayCartItem",{userID}
           );
       setcart(response.data.cartItem.cartProduct);
     } catch (error) {
@@ -50,7 +50,7 @@ const Producturl = ({user}) => {
   
   async function removefromcart(){
     try{
-    const response = await axios.post('http://localhost:4000/api/v1/product/removeFromCart', {productId,userID});
+    const response = await axios.post('https://backend-1-9nhi.onrender.com/api/v1/product/removeFromCart', {productId,userID});
     showCart();
     toast.success("Removed from cart");
     }catch (error) {
@@ -62,7 +62,7 @@ const Producturl = ({user}) => {
   async function addtocart(){
     try{
    
-    const response = await axios.post('http://localhost:4000/api/v1/product/addToCart', {productId,userID});
+    const response = await axios.post('https://backend-1-9nhi.onrender.com/api/v1/product/addToCart', {productId,userID});
     showCart();
     toast.success("Added to cart");
   }catch (error) {
@@ -79,7 +79,7 @@ async function verifyStatus(response){
    const R_id = response.razorpay_payment_id;
    const R_order = response.razorpay_order_id;
    const R_sign = response.razorpay_signature;
-    const res = await axios.post('http://localhost:4000/api/v1/payment/verifySignature', {R_id,R_order,R_sign,product_id,userId});
+    const res = await axios.post('https://backend-1-9nhi.onrender.com/api/v1/payment/verifySignature', {R_id,R_order,R_sign,product_id,userId});
     toast.success("payment successful");
     navigate("/");
   }catch (error) {
@@ -90,8 +90,8 @@ async function verifyStatus(response){
 
 async function buyHandler(){
   try{
-   const {data:{key}} = await axios.get('http://localhost:4000/api/v1/payment/key');
-  const response = await axios.post('http://localhost:4000/api/v1/payment/capturePayment', {product_id,userId,token});
+   const {data:{key}} = await axios.get('https://backend-1-9nhi.onrender.com/api/v1/payment/key');
+  const response = await axios.post('https://backend-1-9nhi.onrender.com/api/v1/payment/capturePayment', {product_id,userId,token});
   console.log(key,"printing key");
   console.log(response.data);
   toast.success("order id created");

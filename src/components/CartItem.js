@@ -18,7 +18,7 @@ const CartItem = ({item,itemIndex,userID,showCart})=>{
 
     async function removefromcart(){
         try{
-        const response = await axios.post('http://localhost:4000/api/v1/product/removeFromCart', {productId,userID});
+        const response = await axios.post('https://backend-1-9nhi.onrender.com/api/v1/product/removeFromCart', {productId,userID});
         console.log("remove to cart",response);
         showCart();
         toast.success("Removed from cart");
@@ -31,7 +31,7 @@ const CartItem = ({item,itemIndex,userID,showCart})=>{
     // const showCart = async (e) => {
     // try {
     //     const response = await axios.post(
-    //     "http://localhost:4000/api/v1/product/displayCartItem",{userID}
+    //     "https://backend-1-9nhi.onrender.com/api/v1/product/displayCartItem",{userID}
     //     );
     //     console.log(response);
     //     setcart(response.data.cartItem.cartProduct);

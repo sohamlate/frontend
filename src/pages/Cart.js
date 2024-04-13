@@ -22,7 +22,7 @@ const Cart = ({user})=>{
     const showCart = async (e) => {
         try {
           const response = await axios.post(
-            "http://localhost:4000/api/v1/product/displayCartItem",{userID}
+            "https://backend-1-9nhi.onrender.com/api/v1/product/displayCartItem",{userID}
           );
           console.log(response);
           setcart(response.data.cartItem.cartProduct);
@@ -40,7 +40,7 @@ const Cart = ({user})=>{
          const R_id = response.razorpay_payment_id;
          const R_order = response.razorpay_order_id;
          const R_sign = response.razorpay_signature;
-          const res = await axios.post('http://localhost:4000/api/v1/payment/manyVerifySignature', {R_id,R_order,R_sign,userId});
+          const res = await axios.post('https://backend-1-9nhi.onrender.com/api/v1/payment/manyVerifySignature', {R_id,R_order,R_sign,userId});
           toast.success("payment successful");
           navigate("/");
         }catch (error) {
@@ -51,8 +51,8 @@ const Cart = ({user})=>{
       
       async function buyHandler(){
         try{
-         const {data:{key}} = await axios.get('http://localhost:4000/api/v1/payment/key');
-        const response = await axios.post('http://localhost:4000/api/v1/payment/manyCapturePayment', {totalAmount,userId,token});
+         const {data:{key}} = await axios.get('https://backend-1-9nhi.onrender.com/api/v1/payment/key');
+        const response = await axios.post('https://backend-1-9nhi.onrender.com/api/v1/payment/manyCapturePayment', {totalAmount,userId,token});
         console.log(key,"printing key");
         console.log(response.data);
         toast.success("order id created");

@@ -33,7 +33,7 @@ import Piracy from "./pages/Piracy";
 import TermsOfUse from "./pages/TermsOfUse"
 import MyProduct from "./pages/MyProduct";
 
-const socket = io("http://localhost:4000");
+const socket = io("https://backend-1-9nhi.onrender.com");
 
 
 
@@ -60,7 +60,7 @@ const App = () => {
         // }
 
         const response = await axios.get(
-          "http://localhost:4000/api/v1/auth/autoLogin",
+          "https://backend-1-9nhi.onrender.com/api/v1/auth/autoLogin",
           {
             headers: {
               Authorization: `${token}`,

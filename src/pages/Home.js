@@ -39,7 +39,7 @@ const Home = ({user})=>{
     async function catProductData(){
         setLoading(true); 
         try{
-            const res = await axios.get('http://localhost:4000/api/v1/product/getCategoryDetail');  
+            const res = await axios.get('https://backend-1-9nhi.onrender.com/api/v1/product/getCategoryDetail');  
           //  console.log(res.data.allCategory);  
         //    const products = Object.values(res.data.data);
            setPosts(res.data.allCategory);

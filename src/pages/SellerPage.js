@@ -23,7 +23,7 @@ const SellerPage = (props)=>{
             const token = localStorage.getItem("token");
 
               const res = await axios.get(
-                "http://localhost:4000/api/v1/product/getsellerproduct",
+                "https://backend-1-9nhi.onrender.com/api/v1/product/getsellerproduct",
                 {
                   headers: {
                     Authorization: `${token}`,

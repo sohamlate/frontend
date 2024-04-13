@@ -59,12 +59,12 @@ const LoginPage = (props) => {
     const handleGoogleLogin = async () => {
       try {
 
-       window.location.href = "http://localhost:4000/api/v1/auth/google";
+       window.location.href = "https://backend-1-9nhi.onrender.com/api/v1/auth/google";
      
     
     //    localStorage.setItem('token', response.data.token);
     //    setIsLoggedIn(true);
-    //   //  const response = await axios.get('http://localhost:4000/api/v1/auth/google');
+    //   //  const response = await axios.get('https://backend-1-9nhi.onrender.com/api/v1/auth/google');
     // //    console.log('Google login response:', response.data);
     //     // Handle successful login response (if needed)
     //    toast.success('Logged in with Google');

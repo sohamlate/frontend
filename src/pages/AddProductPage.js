@@ -60,7 +60,7 @@ function changeHandler(event) {
     const fetch = async () => {
       try {
         const cat = await axios.get(
-          "http://localhost:4000/api/v1/product/getCategoryDetail"
+          "https://backend-1-9nhi.onrender.com/api/v1/product/getCategoryDetail"
         );
 
         console.log(cat.data.allCategory);
@@ -88,7 +88,7 @@ function changeHandler(event) {
      console.log("in form data",formData.Category);
         formDataToSend.append('Categorys', formData.Category);
         formDataToSend.append('thumbnailImage', formData.thumbnailImage);
-        const response = await axios.post("http://localhost:4000/api/v1/product/createproduct",formDataToSend,  {
+        const response = await axios.post("https://backend-1-9nhi.onrender.com/api/v1/product/createproduct",formDataToSend,  {
         headers: {
             Authorization: `Bearer ${token}`
         }
