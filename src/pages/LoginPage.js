@@ -36,7 +36,7 @@ const LoginPage = (props) => {
       e.preventDefault();
       try {
         const response = await axios.post(
-          "https://backend-a6caizfa5-soham-lates-projects.vercel.app/api/v1/auth/login",
+          "https://backend-1-9nhi.onrender.com/api/v1/auth/login",
           formData
         );
         localStorage.setItem("token", response.data.token);
