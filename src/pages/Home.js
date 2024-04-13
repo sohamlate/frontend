@@ -77,7 +77,7 @@ const Home = ({user})=>{
 
             </div>
 
-            <div className="sm:ml-[80%] md:mt-[28rem] xs:mt-[25rem] lg:ml-[85%] lg:mt-[28rem] xs:ml-[12rem]  z-10  text-2xl flex flex-row gap-4 text-center bg-green-400 fixed font-semibold px-[1rem] py-[0.5rem] rounded-md">
+            <div className="sm:ml-[80%] md:mt-[28rem] xs:mt-[25rem] lg:ml-[85%] lg:mt-[25rem] xs:ml-[12rem]  z-10  text-2xl flex flex-row gap-4 text-center bg-green-400 fixed font-semibold px-[1rem] py-[0.5rem] rounded-md">
                     <a
                         href="https://wa.me/7420889804"
                         class="whatsapp_float"

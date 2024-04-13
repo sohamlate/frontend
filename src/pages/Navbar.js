@@ -19,7 +19,7 @@ const Navbar = ({ user, setUser, isLoggedIn, setIsLoggedIn }) => {
     
   return (
     <nav className="bg-white border-gray-200 dark:bg-blue-800">
-  <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 ">
+  <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3 ">
 
     <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="https://res.cloudinary.com/dsy3ebkqc/image/upload/v1712813661/image-removebg-preview_2_z62obq.png" className="h-[3.5rem] w-[13rem] my-[-0.7rem] " alt="Huehub Logo" />
