@@ -80,6 +80,7 @@ const LoginPage = (props) => {
     <div className="flex flex-col lg:max-w-[27%] h-[34rem] mt-[5rem] xs:mx-[5%] sm:mx-[30%]  md:mx-[30%] lg:mx-[32%] xl:mx-[35%] border-[0.2rem] bg-white rounded-md text-md pb-[18%] px-[1rem]">
       <h1 className="text-2xl text-slate-600 mt-[2rem] text-center  mr-2">Welcome to Huehub!</h1>
       <p className="font-thin mt-[0.3rem] text-center mr-2">Please Sign-in to your account</p>
+      <p className="font-thin mt-[0.3rem] text-center mr-2">Please Sign-in to your account</p>
 
       <form  onSubmit={submitHandler} className="flex flex-col m-3 mt-[0.5rem] gap-y-3">
         <label className="flex flex-col" htmlFor="email">

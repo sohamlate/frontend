@@ -143,7 +143,6 @@ const Home = ({user})=>{
           
 
             <h1 className="text-center mt-[1rem] text-2xl font-semibold">Shop By Category</h1>
-            <h1 className="text-center mt-[1rem] text-2xl font-semibold">Shop By Category</h1>
             <div className="flex flex-wrap  px-[5rem] mt-[2.5rem] gap-x-[5rem] text-black p-3 font-poppins justify-center">
 
 
