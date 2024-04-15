@@ -9,6 +9,7 @@ module.exports = {
       },
       screens: {
         'xs': '280px', // Custom breakpoint for extra small screens
+        'xs1':'450px',
         'sm': '640px',
         'md': '768px',
         'lg': '1024px',

@@ -8,6 +8,7 @@ import {useState,useEffect} from "react";
 import  CategoriesProducts  from "../components/CategoriesProducts";
 import axios from "axios";
 import { NavLink, Link } from "react-router-dom";
+import AnimatedTitle from "../components/Animated";
 import artis from "../assests/artis.gif"
 
 
@@ -21,6 +22,9 @@ const Home = ({user})=>{
     function explorehandler(){
         navigate('/gallary');
     }
+
+    const title1 = "Transform ";
+    const title2 = "Creativity 🎨✨ "
 
     function sellHandler(){
     if(user._id && user?.accountType==="Seller")
@@ -40,10 +44,7 @@ const Home = ({user})=>{
         setLoading(true); 
         try{
             const res = await axios.get('https://backend-1-9nhi.onrender.com/api/v1/product/getCategoryDetail');  
-          //  console.log(res.data.allCategory);  
-        //    const products = Object.values(res.data.data);
            setPosts(res.data.allCategory);
-         //   console.log("6+2651265165151",posts);
         }
         catch(error){
             console.log("error in categorise data");
@@ -95,7 +96,7 @@ const Home = ({user})=>{
             <div className="flex flex-row flex-wrap  justify-center items-center">
                 <div className="w-[50%] md:p-[4rem] ">
                     <h1 className="">
-                        <span className="md:text-6xl xs:text-3xl block">Transform</span>
+                        <span className="md:text-6xl xs:text-3xl block"><AnimatedTitle title = {title1}></AnimatedTitle></span>
                         <span className="md:text-4xl xs:text-2xl text-blue-500 block">your home into a gallery </span>
                         <span className="md:text-4xl xs:text-2xl block"> of personal expression with </span>
                         <span className="md:text-4xl xs:text-2xl text-blue-500">our curated collection </span>
@@ -129,7 +130,7 @@ const Home = ({user})=>{
                 </div> */}
                  <div className="w-[35rem] md:p-[4rem] xs:px-[5rem] sm:px-[0rem]">
                     <h1 className="">
-                        <span className="md:text-6xl xs:text-3xl block">Creativity 🎨✨ </span>
+                        <span className="md:text-6xl xs:text-3xl block"><AnimatedTitle title= {title2}></AnimatedTitle></span>
                         <span className="md:text-4xl xs:text-2xl text-blue-500 block"> is the bridge between imagination  </span>
                         <span className="md:text-4xl xs:text-2xl block">and reality. paint your world   </span>
                         <span className="md:text-4xl xs:text-2xl text-blue-500">with the colors of your dreams. </span>

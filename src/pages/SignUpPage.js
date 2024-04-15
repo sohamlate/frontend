@@ -40,17 +40,17 @@ const SignUpPage = ({setIsLoggedIn})=>{
 
 
     return (
-        <div className="flex flex-col w-[27%] h-[40rem] mt-[3rem] mb-[5rem]  border-[0.2rem] bg-white rounded-md text-md pb-[18%] px-[1rem] xl:mx-[38%] lg:mx-[35%]">
+        <div className="flex flex-col max-w-[24rem] h-[40rem]  mt-[3rem] mb-[5rem]  border-[0.2rem] bg-white rounded-md text-md pb-[18%] px-[1rem]  xl:mx-[34%] lg:mx-[30%] md:mx-[28%] sm:mx-[25%] xs:mx-[5%] xs1:mx-[12%]">
         <h1 className="text-2xl text-slate-600 mt-[1rem] text-center  mr-2">Welcome to Huehub!</h1>
         <p className="font-thin mt-[0.3rem] text-center  mr-2">Please enter your details</p>
 
-        <div className="flex flex-row w-fit  justify-between text-1xl font-semibold mt-[0.5rem]  px-1 bg-blue-600 rounded-full  text-white xl:mx-[25%] lg:mx-[12%]">
+        <div className="flex flex-row w-fit  justify-between text-1xl font-semibold mt-[0.5rem]  px-1 bg-blue-600 rounded-full  text-white xl:mx-[23%] lg:mx-[18%] xs:ml-[17%]">
             <button  onClick={()=>{setAccountType("Customer")}}  className={`${accountType==="Customer" ? "bg-blue-500 text-slate-150":"" }  py-3 px-7 rounded-full transition-all duration-500`} >User</button>
             <button onClick={()=>{setAccountType("Seller")}} className={`${accountType==="Seller" ? "bg-blue-500 text-slate-150 ":"" }  py-3 px-7 rounded-full transition-all duration-500`} >Seller</button>
         </div>
   
         <form className="flex flex-col mx-2 mt-[0.5rem] gap-y-2" onSubmit={submitHandler}>
-            <div className="flex flex-row  gap-2 justify-between">
+            <div className="flex flex-row  gap-3 justify-between">
               <div className="flex flex-col xl:mr-[0.5rem] ">
                 <label htmlFor="firstname">
                     <p className="text-left py-1 ">Firstname<sup>*</sup></p>
@@ -99,7 +99,7 @@ const SignUpPage = ({setIsLoggedIn})=>{
               onChange={changeHandler}
             />
          
-         <div className="flex flex-row gap-2 justify-between">
+         <div className="flex flex-row gap-3 justify-between">
              <div className="flex flex-col xl:mr-[0.5rem] ">
                 <label htmlFor="password">
                     <p className="text-left py-1">Create Password<sup>*</sup></p>
