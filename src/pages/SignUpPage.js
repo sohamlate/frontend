@@ -40,7 +40,7 @@ const SignUpPage = ({setIsLoggedIn})=>{
 
 
     return (
-        <div className="flex flex-col max-w-[24rem] h-[40rem]  mt-[3rem] mb-[5rem]  border-[0.2rem] bg-white rounded-md text-md pb-[18%] px-[1rem]  xl:mx-[34%] lg:mx-[30%] md:mx-[28%] sm:mx-[25%] xs:mx-[5%] xs1:mx-[12%]">
+        <div className="flex flex-col 2xl:max-w-[27rem] 2xl:w-[25rem] max-w-[24rem] h-[40rem]  mt-[3rem] mb-[5rem]  border-[0.2rem] bg-white rounded-md text-md pb-[18%] px-[1rem] 2xl:mx-[38%]  xl:mx-[34%] lg:mx-[30%] md:mx-[28%] sm:mx-[25%] xs:mx-[4%] xs1:mx-[12%]">
         <h1 className="text-2xl text-slate-600 mt-[1rem] text-center  mr-2">Welcome to Huehub!</h1>
         <p className="font-thin mt-[0.3rem] text-center  mr-2">Please enter your details</p>
 
@@ -132,7 +132,7 @@ const SignUpPage = ({setIsLoggedIn})=>{
                     value ={ formData.confirmPassword}
                     onChange={changeHandler}
                 />
-                <div onClick={()=>{Setvisible1(!visible1)}} className="cursor-pointer absolute mt-[-1.6rem] lg:ml-[8rem] xl:ml-[9.5rem] " >
+                <div onClick={()=>{Setvisible1(!visible1)}} className="cursor-pointer absolute mt-[-1.6rem] ml-[8rem] " >
                     {visible1?   <FaRegEye />  : <FaRegEyeSlash />}
                 </div>
             </div>

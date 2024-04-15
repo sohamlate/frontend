@@ -2,7 +2,7 @@ import { react } from "react";
 
 const Cancellation = ()=>{
     return(
-        <div className="w-[60%] mx-[20%] bg-slate-100 h-auto pb-[2rem]">
+        <div className="lg:w-[60%] xs:mx-[7%] md:mx-[15%] lg:mx-[20%] bg-slate-100 h-auto pb-[2rem]">
             <h1 className="text-lg font-semibold text-center pt-[2rem]">Cancellation Policy</h1>
             <h1 className="text-lg font-semibold text-center pt-[2rem]">Cancellation Terms:</h1>
             <p className="px-[4rem] pt-[1rem]">Orders can be canceled within 24 hours of purchase without incurring any cancellation fees. Cancellations made after 24 hours are subject to a cancellation fee of 10% of the total order value.</p>

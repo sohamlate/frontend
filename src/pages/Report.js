@@ -2,7 +2,7 @@ import { react } from "react";
 
 const Report = ()=>{
     return(
-        <div className="w-[60%] mx-[20%] bg-slate-100 h-auto pb-[2rem]">
+        <div className="lg:w-[60%] xs:mx-[7%] md:mx-[15%] lg:mx-[20%] bg-slate-100 h-auto pb-[2rem]">
             <h1 className="text-lg font-semibold text-center pt-[2rem]">Report Infringement</h1>
             <p className="px-[4rem] pt-[1rem]">If you believe that any content on our website infringes upon your intellectual property rights or violates applicable laws, please follow the procedure below to report the infringement:</p>
 

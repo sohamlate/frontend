@@ -2,7 +2,7 @@ import { react } from "react";
 
 const Piracy = ()=>{
     return(
-        <div className="w-[60%] mx-[20%] bg-slate-100 h-auto pb-[2rem]">
+        <div className="lg:w-[60%] xs:mx-[7%] md:mx-[15%] lg:mx-[20%] bg-slate-100 h-auto pb-[2rem]">
             <h1 className="text-lg font-semibold text-center pt-[2rem]">Privacy Policy</h1>
             <p className="px-[4rem] pt-[1rem]">At Huehub, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy outlines how we collect, use, and safeguard your data when you visit our website or use our services.</p>
 

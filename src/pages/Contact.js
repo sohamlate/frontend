@@ -4,7 +4,7 @@ import { react } from "react";
 
 const Contact = ()=>{
     return(
-        <div className="w-[60%] mx-[20%] bg-slate-100 h-auto pb-[2rem]">
+        <div className="lg:w-[60%] xs:mx-[7%] md:mx-[15%] lg:mx-[20%] bg-slate-100 h-auto pb-[2rem]">
             <h1 className="text-lg font-semibold text-center pt-[2rem]">Contact Us</h1>
             <p className="px-[4rem] pt-[1rem]">If you have any inquiries about our artworks, need assistance with your purchase, or have any other questions, please don't hesitate to contact us. We're here to help you.</p>
 
