@@ -13,7 +13,7 @@ const Accountpage = ({setIsLoggedIn})=>{
         try{
             const formDataWithAccountType = {...formData, accountType};
             console.log(formDataWithAccountType);
-              const response = await axios.post('http://localhost:4000/api/v1/auth/addAccountType', formDataWithAccountType);
+              const response = await axios.post('https://backend-tub9.onrender.com/api/v1/auth/addAccountType', formDataWithAccountType);
               console.log('Response:', response.data);
               localStorage.setItem('token', response.data.token);
               setIsLoggedIn(true);

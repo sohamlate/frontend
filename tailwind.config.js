@@ -17,6 +17,13 @@ module.exports = {
         '2xl': '1536px',
       },
     },
+    fontFamily: {
+      poppins: ["Poppins", "sans-serif"],
+      roboto: ["Roboto", "sans-serif"],
+        "roboto-condensed": ["Roboto Condensed", "sans-serif"],
+        "roboto-slab": ["Roboto Slab", "serif"],
+    },
   },
   plugins: [],
 };
+

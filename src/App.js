@@ -12,7 +12,7 @@ import { Route,Routes } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
 import Producturl from "./pages/Producturl";
 // import Accountpage from "./components/Accountpage";
-import AddProductpage from "./pages/AddProductPage";
+import AddProductpage from "./components/AddProductPage";
 import io from "socket.io-client";
 import OtpPage from "./pages/Otppage";
 import ResetPass from "./pages/ResetPass";
@@ -61,7 +61,7 @@ const App = () => {
         // }
 
         const response = await axios.get(
-          "http://localhost:4000/api/v1/auth/autoLogin",
+          "https://backend-tub9.onrender.com/api/v1/auth/autoLogin",
           {
             headers: {
               Authorization: `${token}`,

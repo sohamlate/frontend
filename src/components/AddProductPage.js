@@ -1,12 +1,11 @@
 import React from "react";
-import { FaRegEyeSlash } from "react-icons/fa";
-import { FaRegEye } from "react-icons/fa";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useEffect } from "react";
-const Productpage = () => {
+import { RxCross2 } from "react-icons/rx";
+const Productpage = ({ showAddPage, setShowAddPage }) => {
   const [formData, setFormData] = useState({
     productName: "",
     productDescription: "",
@@ -20,17 +19,17 @@ const Productpage = () => {
 
   const navigate = useNavigate();
 
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem("token");
 
   console.log(token);
 
-//   function changeHandler(event) {
-//     setFormData((pre) => ({ ...pre, [event.target.id]: event.target.value }));
-//   }
+  //   function changeHandler(event) {
+  //     setFormData((pre) => ({ ...pre, [event.target.id]: event.target.value }));
+  //   }
 
-function changeHandler(event) {
+  function changeHandler(event) {
     if (event.target.id === "thumbnailImage") {
-        const file = event.target.files[0];
+      const file = event.target.files[0];
       // If file input is changed
       setFormData((prev) => ({
         ...prev,
@@ -50,7 +49,6 @@ function changeHandler(event) {
     }
   }
 
-
   useEffect(() => {
     console.log(formData);
     return () => {};
@@ -60,7 +58,7 @@ function changeHandler(event) {
     const fetch = async () => {
       try {
         const cat = await axios.get(
-          "http://localhost:4000/api/v1/product/getCategoryDetail"
+          "https://backend-tub9.onrender.com/api/v1/product/getCategoryDetail"
         );
 
         console.log(cat.data.allCategory);
@@ -76,23 +74,27 @@ function changeHandler(event) {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-  //  console.log(formData);
+    //  console.log(formData);
 
-    try {   
-        const formDataToSend = new FormData();
-        formDataToSend.append('productName', formData.productName);
-        formDataToSend.append('productDescription', formData.productDescription);
-        formDataToSend.append('price', formData.price);
-        formDataToSend.append('tags', formData.tags);
-     //   const selectedCategory = JSON.parse(formData.Category);
-     console.log("in form data",formData.Category);
-        formDataToSend.append('Categorys', formData.Category);
-        formDataToSend.append('thumbnailImage', formData.thumbnailImage);
-        const response = await axios.post("http://localhost:4000/api/v1/product/createproduct",formDataToSend,  {
-        headers: {
-            Authorization: `Bearer ${token}`
+    try {
+      const formDataToSend = new FormData();
+      formDataToSend.append("productName", formData.productName);
+      formDataToSend.append("productDescription", formData.productDescription);
+      formDataToSend.append("price", formData.price);
+      formDataToSend.append("tags", formData.tags);
+      //   const selectedCategory = JSON.parse(formData.Category);
+      console.log("in form data", formData.Category);
+      formDataToSend.append("Categorys", formData.Category);
+      formDataToSend.append("thumbnailImage", formData.thumbnailImage);
+      const response = await axios.post(
+        "https://backend-tub9.onrender.com/api/v1/product/createproduct",
+        formDataToSend,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
-    });
+      );
 
       if (response) navigate("/gallary");
 
@@ -103,17 +105,34 @@ function changeHandler(event) {
   };
 
   return (
-    <form onSubmit={submitHandler} className="">
-      <div className="flex flex-row gap-x-[10rem]">
-        <div className="w-[30rem] ml-[5rem] mt-[2rem] border-2 ">
-          <input id="thumbnailImage" type="file" onChange={changeHandler}></input>
-          {imageUrl && ( // Display the image if imageUrl is available
-            <img src={imageUrl} alt="Thumbnail" style={{ maxWidth: "100%", marginTop: "0rem" }} /> )}
-       
-        </div>
-        <div className="w-[40%] ml-[5rem] ">
+    <form
+      onSubmit={submitHandler}
+      className="bg-white relative border-2  rounded-md p-1 font-poppins shadow-md shadow-black"
+    >
+      <div
+        onClick={() => setShowAddPage(!showAddPage)}
+        className="bg-red-600 w-fit p-1 text-white rounded-full absolute -right-2 -top-2 hover:scale-110 hover:bg-red-700 "
+      >
+        <RxCross2 />
+      </div>
+      <div className="flex gap-x-3 ">
+        <div className="border-2 rounded-md ml-3 mt-3 min-w-[20vw]">
           <input
-            className="font-bold text-3xl mt-[3rem] p-2 focus:outline-none"
+            id="thumbnailImage"
+            type="file"
+            accept="image/*"
+            onChange={changeHandler}
+            style={{ display: "none" }}
+          ></input>
+          <label htmlFor="thumbnailImage" className="cursor-pointer blink">
+            Select Image
+          </label>
+          {imageUrl && <img src={imageUrl} className=" mt-0 p-1" />}
+        </div>
+
+        <div className="">
+          <input
+            className="font-bold text-3xl mt-[3rem] w-full rounded-md px-2 focus:outline-none"
             type="text"
             id="productName"
             placeholder="Please Enter The Title"
@@ -122,7 +141,7 @@ function changeHandler(event) {
           />
 
           <input
-            className="mt-[3rem] w-[40rem] h-[3rem] font-semibold block text-xl whitespace-normal focus:outline-none"
+            className="mt-[3rem] w-full rounded-md h-[3rem] font-semibold block text-xl whitespace-normal focus:outline-none"
             placeholder="Enter Description"
             id="productDescription"
             value={formData.productDescription}
@@ -130,7 +149,7 @@ function changeHandler(event) {
           />
 
           <input
-            className="mt-[1rem] font-semibold text-xl focus:outline-none "
+            className="mt-[1rem] font-semibold rounded-md w-full text-xl focus:outline-none "
             placeholder="Enter Price"
             id="price"
             type="number"
@@ -139,31 +158,30 @@ function changeHandler(event) {
           />
 
           <input
-            className="mt-[1.5rem] font-semibold text-xl focus:outline-none block "
+            className="mt-[1.5rem] font-semibold  w-full rounded-md text-xl focus:outline-none block "
             placeholder="Enter Tags"
             id="tags"
             value={formData.tags}
             onChange={changeHandler}
           />
 
-          {/* <input className="mt-[1rem] font-semibold text-xl focus:outline-none " placeholder="Enter Category"/> */}
           <div className="mt-[3rem]">
-            <label for="category" className="mx-[1rem]">
+            <label for="category" className="mx-[1rem] font-bold">
               Select a Category:
             </label>
-            {/* onSelect={() => console.log(123)} */}
-
             <select id="Category" onChange={changeHandler}>
               <option>Select Category</option>
               {catogoryList &&
                 catogoryList.map((ele) => {
-                  return <option value={JSON.stringify(ele)}>{ele.name}</option>;
+                  return (
+                    <option value={JSON.stringify(ele)}>{ele.name}</option>
+                  );
                 })}
             </select>
           </div>
         </div>
       </div>
-      <button className="ml-[50%] mt-[3%] border-2 bg-blue-600 py-2 px-[3rem] text-white font-semibold">
+      <button className=" left-1/2 ml-[50%] mt-[3%] border-2 bg-blue-600 py-2 px-[3rem] text-white font-semibold">
         Submit
       </button>
     </form>

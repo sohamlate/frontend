@@ -19,7 +19,7 @@ const SignUpPage = ({setIsLoggedIn})=>{
     const submitHandler= async(e)=>{
       e.preventDefault();
       try {
-        const response = await axios.post('http://localhost:4000/api/v1/auth/sendOTP', formData);
+        const response = await axios.post('https://backend-tub9.onrender.com/api/v1/auth/sendOTP', formData);
         navigate('/signup');
       } catch (error) {
         console.error('Error:', error);

@@ -43,7 +43,7 @@ const Home = ({user})=>{
     async function catProductData(){
         setLoading(true); 
         try{
-            const res = await axios.get('http://localhost:4000/api/v1/product/getCategoryDetail');  
+            const res = await axios.get('https://backend-tub9.onrender.com/api/v1/product/getCategoryDetail');  
            setPosts(res.data.allCategory);
         }
         catch(error){
