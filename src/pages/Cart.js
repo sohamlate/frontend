@@ -10,6 +10,9 @@ const Cart = ({user})=>{
 
     const [cart,setcart] = useState([]);
     const [totalAmount,setTotalAmount] = useState(0);
+    const [loading ,setLoading] = useState(false);
+
+
     const userID = user._id;
     const token = localStorage.getItem("token");
     const navigate = useNavigate();
@@ -18,11 +21,16 @@ const Cart = ({user})=>{
         if(cart)
         setTotalAmount(cart.reduce((acc,curr)=>acc+curr.price,0));
     },[cart]);
+
+
+
+
+
     
     const showCart = async (e) => {
         try {
           const response = await axios.post(
-            "https://backend-1-9nhi.onrender.com/api/v1/product/displayCartItem",{userID}
+            "http://localhost:4000/api/v1/product/displayCartItem",{userID}
           );
           console.log(response);
           setcart(response.data.cartItem.cartProduct);
@@ -40,7 +48,7 @@ const Cart = ({user})=>{
          const R_id = response.razorpay_payment_id;
          const R_order = response.razorpay_order_id;
          const R_sign = response.razorpay_signature;
-          const res = await axios.post('https://backend-1-9nhi.onrender.com/api/v1/payment/manyVerifySignature', {R_id,R_order,R_sign,userId});
+          const res = await axios.post('http://localhost:4000/api/v1/payment/manyVerifySignature', {R_id,R_order,R_sign,userId});
           toast.success("payment successful");
           navigate("/");
         }catch (error) {
@@ -51,8 +59,8 @@ const Cart = ({user})=>{
       
       async function buyHandler(){
         try{
-         const {data:{key}} = await axios.get('https://backend-1-9nhi.onrender.com/api/v1/payment/key');
-        const response = await axios.post('https://backend-1-9nhi.onrender.com/api/v1/payment/manyCapturePayment', {totalAmount,userId,token});
+         const {data:{key}} = await axios.get('http://localhost:4000/api/v1/payment/key');
+        const response = await axios.post('http://localhost:4000/api/v1/payment/manyCapturePayment', {totalAmount,userId,token});
         console.log(key,"printing key");
         console.log(response.data);
         toast.success("order id created");
@@ -97,11 +105,16 @@ const Cart = ({user})=>{
    
 
     return (
+      <div>
+          <h1 className="ml-[3.5rem] mt-[2rem] mb-[1rem] font-bold text-xl">Your Shopping Basket</h1>
         <div className="ml-[3rem] flex">
+
+
            {
             cart && cart.length>0 ? 
-            (<div className="  flex item-center justify-center ">
-                <div className="flex flex-wrap gap-4 w-[75%] ">
+            (<div className="flex items-center justify-center ">
+                <div className="flex flex-wrap gap-4 w-[72rem] ">
+
                 {
                     cart.map((item,index)=>{
                         return <CartItem item={item} key={item.id} itemIndex ={index} userID={userID} showCart={showCart}/>
@@ -109,7 +122,7 @@ const Cart = ({user})=>{
                 }
                 </div>
 
-                <div className="border-2 h-auto max-h-[17rem] w-[20rem] flex flex-col mt-[2rem] p-4">
+                <div className="border-2 h-auto max-h-[17rem] w-[20rem] flex flex-col p-4">
                     <div className="text-center font-bold pb-[2.5rem]">Your Cart</div>
                     <div className="font-semibold pb-[1rem]">Summary</div>
                     <p>
@@ -139,6 +152,10 @@ const Cart = ({user})=>{
                 )
            } 
            
+        </div>
+
+
+      
         </div>
     )
 }

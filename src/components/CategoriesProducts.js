@@ -14,7 +14,7 @@ const CategoriesProducts = ({item})=>{
         try {
            const itemID = item._id;
    //         console.log("hwqeqwewqeweqwew",formData);
-          const response = await axios.post('https://backend-1-9nhi.onrender.com/api/v1/product/getCategoryPageDetail', {itemID});
+          const response = await axios.post('http://localhost:4000/api/v1/product/getCategoryPageDetail', {itemID});
           const item1 = response.data.data.selectedCategory.products
      //     console.log('Response:',item1);
           const statedata= {

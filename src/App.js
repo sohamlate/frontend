@@ -32,8 +32,9 @@ import Security from "./pages/Security";
 import Piracy from "./pages/Piracy";
 import TermsOfUse from "./pages/TermsOfUse"
 import MyProduct from "./pages/MyProduct";
+import EditProfile from "./components/EditProfile";
 
-const socket = io("https://backend-1-9nhi.onrender.com");
+const socket = io("http://localhost:4000");
 
 
 
@@ -60,7 +61,7 @@ const App = () => {
         // }
 
         const response = await axios.get(
-          "https://backend-1-9nhi.onrender.com/api/v1/auth/autoLogin",
+          "http://localhost:4000/api/v1/auth/autoLogin",
           {
             headers: {
               Authorization: `${token}`,
@@ -136,6 +137,7 @@ const App = () => {
         <Route path="/myproduct" element={<MyProduct user={user} />} />
         <Route path="/gallary" element={<Gallary />} />
         <Route path="/about" element={<About />} />
+        <Route path="/editprofile" element={<EditProfile user={user} />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cancellation" element={<Cancellation />} />
         <Route path="/report" element={<Report />} />

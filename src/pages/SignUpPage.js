@@ -26,7 +26,7 @@ const SignUpPage = ({setIsLoggedIn})=>{
         try {
             const formDataWithAccountType = {...formData, accountType};
             console.log(formDataWithAccountType);
-          const response = await axios.post('https://backend-1-9nhi.onrender.com/api/v1/auth/signup', formDataWithAccountType);
+          const response = await axios.post('http://localhost:4000/api/v1/auth/signup', formDataWithAccountType);
           localStorage.setItem('token', response.data.token);
           setIsLoggedIn(true);
           navigate('/gallary');

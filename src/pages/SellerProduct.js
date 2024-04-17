@@ -13,7 +13,7 @@ const SellerProduct = ({ user }) => {
   const deleteHandler = async () => {
     try {
       const response = await axios.post(
-        "https://backend-1-9nhi.onrender.com/api/v1/product/deleteproduct",
+        "http://localhost:4000/api/v1/product/deleteproduct",
         {
           productId: item._id,
           userId: user._id,

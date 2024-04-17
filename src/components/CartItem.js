@@ -18,7 +18,7 @@ const CartItem = ({item,itemIndex,userID,showCart})=>{
 
     async function removefromcart(){
         try{
-        const response = await axios.post('https://backend-1-9nhi.onrender.com/api/v1/product/removeFromCart', {productId,userID});
+        const response = await axios.post('http://localhost:4000/api/v1/product/removeFromCart', {productId,userID});
         console.log("remove to cart",response);
         showCart();
         toast.success("Removed from cart");
@@ -31,7 +31,7 @@ const CartItem = ({item,itemIndex,userID,showCart})=>{
     // const showCart = async (e) => {
     // try {
     //     const response = await axios.post(
-    //     "https://backend-1-9nhi.onrender.com/api/v1/product/displayCartItem",{userID}
+    //     "http://localhost:4000/api/v1/product/displayCartItem",{userID}
     //     );
     //     console.log(response);
     //     setcart(response.data.cartItem.cartProduct);
@@ -42,7 +42,7 @@ const CartItem = ({item,itemIndex,userID,showCart})=>{
     // };
   
     return (
-        <div className="w-[17rem] p-5 border-2 my-6 flex flex-wrap">
+        <div className="w-[17rem] p-5 border-2 my-6 flex flex-wrap hover:scale-105">
             <div>
                 <div className="flex justify-center my-[1rem] h-[9rem] ">
                     <img src={item.thumbnail}></img>
@@ -51,10 +51,10 @@ const CartItem = ({item,itemIndex,userID,showCart})=>{
                     <h1 className="font-semibold">{item.productName}</h1>
                     <h1>{item.productDescription}</h1>
                     <div className="flex font-medium justify-center py-2 ">
-                        <p>{item.price}</p>
+                        <p>₹{item.price}</p>
                     </div>
                     <div  className="flex justify-center items-center">
-                        <button onClick={removefromcart} className=" text-white font-semibold bg-blue-500 py-[0.4rem] px-[2rem]" >Remove from cart</button>
+                        <button onClick={removefromcart} className=" border  mx-[1rem] px-[5%] py-[3%] mt-1 w-[12rem] rounded-md shadow hover:shadow-inner text-white font-semibold bg-blue-600 hover:shadow-white" >Remove from cart</button>
                         {/* <button className=" text-white font-bold bg-blue-500 py-[0.4rem] px-[3rem]" onClick={removefromcart}>Delete</button> */}
                     </div>
                 </div>

@@ -33,7 +33,7 @@ const Gallary = ()=>{
     const fetch = async () => {
         try {
         const cat = await axios.get(
-            "https://backend-1-9nhi.onrender.com/api/v1/product/getCategoryDetail"
+            "http://localhost:4000/api/v1/product/getCategoryDetail"
         );
         setCatogoryList(cat.data.allCategory);
         } catch (error) {
@@ -49,7 +49,7 @@ const Gallary = ()=>{
         try {
         console.log("printing cat item ",item);
         const itemID = item._id;
-        const response = await axios.post('https://backend-1-9nhi.onrender.com/api/v1/product/getCategoryPageDetail', {itemID});
+        const response = await axios.post('http://localhost:4000/api/v1/product/getCategoryPageDetail', {itemID});
         const item1 = response.data.data.selectedCategory.products
         return item1;
         } catch (error) {
@@ -61,7 +61,7 @@ const Gallary = ()=>{
     async function fetchProductData(){
         setLoading(true); 
         try{
-            const res = await axios.get('https://backend-1-9nhi.onrender.com/api/v1/product/getallproduct');  
+            const res = await axios.get('http://localhost:4000/api/v1/product/getallproduct');  
  
             setOriginalPosts(res.data.data);
             setPosts(res.data.data);     

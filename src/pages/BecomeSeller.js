@@ -27,7 +27,7 @@ const BecomeSeller = ({setIsLoggedIn,user,setUser})=>{
         try {
            // console.log(formData);
           const response = await axios.post(
-            "https://backend-1-9nhi.onrender.com/api/v1/auth/changeAccountType",
+            "http://localhost:4000/api/v1/auth/changeAccountType",
             formData
           );
           console.log(response);

@@ -27,6 +27,10 @@ const Profile = ({ user, setIsLoggedIn, setUser, isLoggedIn, setIsClick }) => {
     navigate("/myproduct");
   };
 
+  const editProfileHandler = async() => {
+    navigate("/editprofile");
+  };
+
   const dropdownRef = useRef();
 
 
@@ -78,7 +82,7 @@ const Profile = ({ user, setIsLoggedIn, setUser, isLoggedIn, setIsClick }) => {
               </div>
             </div>
             <div className="bg-blue-500 cursor-pointer p-1 text-center w-[70%] text-white rounded-md hover:shadow-md hover:shadow-sky-400  hover:scale-105 hover:bg-blue-600 transition-all duration-500">
-              <div className="flex justify-center items-center gap-x-2">
+              <div onClick={editProfileHandler} className="flex justify-center items-center gap-x-2">
                 <FaUserEdit />
                 <p>Edit Profle</p>
               </div>

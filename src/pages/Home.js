@@ -43,7 +43,7 @@ const Home = ({user})=>{
     async function catProductData(){
         setLoading(true); 
         try{
-            const res = await axios.get('https://backend-1-9nhi.onrender.com/api/v1/product/getCategoryDetail');  
+            const res = await axios.get('http://localhost:4000/api/v1/product/getCategoryDetail');  
            setPosts(res.data.allCategory);
         }
         catch(error){
@@ -59,7 +59,10 @@ const Home = ({user})=>{
  
   
     return (
-        <div className="h-[100vh] pt-[3rem]  ">
+        <div className=" pt-[3rem] bg-gradient-to-br from-[#FFD3A5] to-[#FD6585]  ">
+         {/* <div className=" pt-[3rem] bg-gradient-to-br from- to-purple-800  "> */}
+
+        <div className="">
 
 
             {/* <div className="flex p-2 items-center text-2xl  border border-black w-fit ml-96 rounded-md shadow-xl shadow-blue-100 mb-[5rem] ">
@@ -106,6 +109,8 @@ const Home = ({user})=>{
                 <div className="relative">
                    <img src={artists} className=" w-[35rem] xs:h-[20rem] sm:h-[25rem] xs:mt-[4rem] xs:p-[2rem] sm:p-[0rem] sm:mt-[0rem] opacity-80 shadow-xl shadow-blue-200 relative"></img>
                 </div>
+            </div>
+
             </div>
 
          
@@ -203,7 +208,7 @@ const Home = ({user})=>{
               <a href="https://wa.me/7420889804" className="block text-blue-700 hover:underline">WhatsApp</a>
               <a href="https://www.instagram.com/sohamlate24" className="block text-blue-700 hover:underline">Instagram</a>
               <a href="https://www.facebook.com" className="block text-blue-700 hover:underline">Facebook</a>
-            </div>
+            </div>  
           </div>
         </div>
 
