@@ -34,7 +34,7 @@ import TermsOfUse from "./pages/TermsOfUse"
 import MyProduct from "./pages/MyProduct";
 import EditProfile from "./components/EditProfile";
 
-const socket = io("http://localhost:4000");
+const socket = io("https://backend-tub9.onrender.com");
 
 
 

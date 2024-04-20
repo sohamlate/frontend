@@ -61,23 +61,25 @@ const LoginPage = (props) => {
   };
 
   return (
-    <div className=" relative w-[screen] h-[100vh] text-white">
+    <div className=" relative w-screen h-[100vh] pt-[2rem]  text-white">
       <img src={logo} className="absolute top-0 w-full h-full " />
-      <div className="flex flex-wrap justify-center items-center gap-x-20 w-full">
+      <div className="flex flex-wrap justify-center  items-center gap-x-20 w-full">
+     
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
           className="z-30 max-w-96"
         >
-          <p className="text-white text-5xl">
+          <p className="text-white lg:text-5xl md:text-4xl mx-[1rem] xs:mb-[1rem] xs:text-3xl  block">
             "Experience the{" "}
             <ReactTyped
               strings={[
                 "HueHub",
               ]}
-              typeSpeed={40}
-              backSpeed={50}
+              typeSpeed={200}
+              backSpeed={200}
+              loop
               className="text-[#f8ea4f]"
             >
             </ReactTyped>{" "}
@@ -85,14 +87,15 @@ const LoginPage = (props) => {
             masterpieces begin."
           </p>
         </motion.div>
+      
         <motion.div // Apply animation to the form
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
           className="flex items-center justify-center mt-5"
         >
-          <div className=" w-[30vw]  min-w-[280px]">
-            <div className="flex flex-col  backdrop-filter backdrop-blur-lg bg-transparent rounded-md text-md p-2 border border-black">
+          <div className=" md:w-[25rem] xs:w-[90vw] max-w-[25rem]  min-w-[280px]">
+            <div className="flex flex-col backdrop-filter backdrop-blur-lg  bg-transparent rounded-md text-md p-2 border border-black">
               <h1 className="text-2xl  mt-[2rem] text-center mr-2 text-">
                 Welcome to Huehub!
               </h1>
@@ -105,14 +108,14 @@ const LoginPage = (props) => {
                 className="flex flex-col  m-3 mt-[0.5rem] gap-y-2"
               >
                 <label className="flex flex-col" htmlFor="email">
-                  <p className="text-left text-xl font-semibold py-2">
+                  <p className="text-left text-xl  pt-2">
                     Email<sup>*</sup>
                   </p>
                 </label>
                 <input
                   required
                   id="email"
-                  className=" text-black px-2 rounded-md h-[3rem] bg-gray-100 border border-none"
+                  className=" text-black px-2 rounded-md xs:h-[2.7rem] sm:h-[3rem] bg-gray-100 border border-none"
                   type="email"
                   placeholder=" Email"
                   value={formData.email}
@@ -120,13 +123,13 @@ const LoginPage = (props) => {
                 />
 
                 <label htmlFor="password">
-                  <p className="text-left text-xl font-semibold py-2">
+                  <p className="text-left text-xl  pt-2">
                     Password<sup>*</sup>
                   </p>
                 </label>
-                <div className="w-full rounded-md  h-[3rem] bg-gray-100 relative">
+                <div className="w-full rounded-md  xs:h-[2.7rem] sm:h-[3rem] bg-gray-100 relative">
                   <input
-                    className=" text-black px-2 rounded-md h-[3rem] bg-gray-100 border border-none w-full"
+                    className=" text-black px-2 rounded-md xs:h-[2.7rem] sm:h-[3rem] bg-gray-100 border border-none w-full"
                     required
                     id="password"
                     type={visible ? "text" : "password"}
@@ -138,7 +141,7 @@ const LoginPage = (props) => {
                     onClick={() => {
                       Setvisible(!visible);
                     }}
-                    className="cursor-pointer absolute right-2 top-5"
+                    className="cursor-pointer absolute right-3 top-4 text-black"
                   >
                     {visible ? <FaRegEye /> : <FaRegEyeSlash />}
                   </div>

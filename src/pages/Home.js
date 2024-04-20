@@ -59,10 +59,10 @@ const Home = ({user})=>{
  
   
     return (
-        <div className=" pt-[3rem] bg-gradient-to-br from-[#FFD3A5] to-[#FD6585]  ">
+        <div className=" pt-[3rem] bg-gradient-to-br from-sky-200 to-white ">
          {/* <div className=" pt-[3rem] bg-gradient-to-br from- to-purple-800  "> */}
 
-        <div className="">
+        <div className="">  
 
 
             {/* <div className="flex p-2 items-center text-2xl  border border-black w-fit ml-96 rounded-md shadow-xl shadow-blue-100 mb-[5rem] ">
@@ -70,7 +70,7 @@ const Home = ({user})=>{
             </div> */}
             <div className="flex flex-row rounded-3xl border-2 justify-center md:mx-[25%] xs:mx-[20%] mb-[3rem] py-[0.5rem] boder-2 border-black">
                 <input 
-                className="w-[90%]  py-[0.3rem] border-none focus:border-none focus:outline-none" 
+                className="w-[90%]  py-[0.3rem] border-none focus:border-none bg-inherit focus:outline-none" 
                 type="text" 
                 placeholder="Explore your passion: Search for your favorite art style or artist here..."
                 // value=""
@@ -150,15 +150,15 @@ const Home = ({user})=>{
 
             <h1 className="text-center mt-[1rem] text-2xl font-semibold">Shop By Category</h1>
          
-            <div className="flex flex-wrap  px-[5rem] mt-[2.5rem] gap-x-[5rem] text-black p-3 font-poppins justify-center">
+            <div className="flex flex-wrap  lg:px-[5rem]  mt-[2.5rem] lg:gap-x-[5rem] text-black p-3 font-poppins justify-center">
 
 
-            <div className="block logos mx-[10rem]">
+            <div className="block logos lg:mx-[10rem] bg-inherit">
                 {
                     loading ? <Spinner/>:
                     posts  ?
                     
-                    (   <div className=" flex flex-row justify-center item-center logos-slide  w-full   gap-x-[3rem] ">
+                    (   <div className=" flex flex-row   justify-center  item-center logos-slide  w-full xs:gap-x-[1.2rem]  lg:gap-x-[3rem] ">
                         {    
                             posts.map((item)=>(
                                 <CategoriesProducts key={item._id} item={item}></CategoriesProducts>

@@ -36,16 +36,17 @@ const Products = ({ item }) => {
   return (
     <div
       onClick={handleClick}
-      className="min-w-[280px] stripe item-center max-h-[400px] bg-purple-200  hover:scale-110 transition-all duration-200 p-5 rounded-md"
+      className="min-w-[280px] stripe item-center max-h-[400px] border-2 border-black bg-sky-50 h-fit hover:scale-110 transition-all duration-500 p-5 rounded-md"
     >
       <div className="flex justify-center my-[1rem] h-[9rem]">
         <img className="flex  rounded-md" src={item.thumbnail} />
       </div>
+      <div className="bg-[#00246B] w-full h-1 my-2"></div>
       <div className="flex justify-between items-center text-xl ">
-        <div className=" font-roboto font-bold">
+        <div className=" font-roboto font-bold text-[#00246B]">
           <p>{displayHead}</p>
         </div>
-        <div className="flex  justify-center py-2 ">
+        <div className="flex  justify-center  bg-[#00246B] text-white rounded-full p-2">
           <p>₹ {item.price}</p>
         </div>
       </div>

@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { FaStar } from 'react-icons/fa';
-
+import React, { useState } from "react";
+import { FaStar } from "react-icons/fa";
+import { ReactTyped } from "react-typed";
+import {motion} from "framer-motion";
 function RatingAndReview() {
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
-  const [review, setReview] = useState('');
+  const [review, setReview] = useState("");
   const [reviewsList, setReviewsList] = useState([]);
 
   const handleRatingChange = (newRating) => {
@@ -24,13 +25,15 @@ function RatingAndReview() {
     const newReview = { rating, review };
     setReviewsList([...reviewsList, newReview]);
     setRating(0);
-    setReview('');
+    setReview("");
   };
 
   return (
-    <div className="flex-col space-y-[1rem] p-4 mx-[10rem]">
-      <h2 className="text-2xl font-bold mb-9">Rating and Review</h2>
-      <div className="flex rating">
+    <div  className="flex flex-col space-y-[1rem] p-4 bg-sky-50 rounded-xl my-2">
+      <h2 className="text-2xl font-bold bg-amber-700 text-white rounded-xl px-1 w-fit">
+        Rating and Review
+      </h2>
+      <div className="flex">
         {[...Array(5)].map((_, index) => {
           const starValue = index + 1;
           return (
@@ -38,7 +41,7 @@ function RatingAndReview() {
               {/* Wrap radio button and star icon inside a container */}
               <div className="flex items-center">
                 <input
-                  className="sr-only" // Hide the radio button
+                  className="sr-only text-black" // Hide the radio button
                   type="radio"
                   name="rating"
                   value={starValue}
@@ -48,7 +51,9 @@ function RatingAndReview() {
                 />
                 <FaStar
                   className="star mt-[-0.7rem] inline-block cursor-pointer"
-                  color={starValue <= (hoverRating || rating) ? '#ffc107' : '#e4e5e9'}
+                  color={
+                    starValue <= (hoverRating || rating) ? "#ffc107" : "#000000"
+                  }
                   size={25}
                 />
               </div>
@@ -58,24 +63,30 @@ function RatingAndReview() {
       </div>
       <form onSubmit={handleSubmit}>
         <label className="block mb-2">
-          Review:
+          <p className="text-xl ml-2">Review:</p>
           <textarea
             className="block mt-1 w-full border border-gray-300 rounded-md p-2"
             value={review}
             onChange={handleReviewChange}
           />
         </label>
-        <button
-          type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
-        >
-          Submit Review
-        </button>
+        <div className="flex justify-center">
+          <button type="submit" className=" button-89 ">
+            Submit Review
+          </button>
+        </div>
       </form>
       <div className="mt-4">
-        <h3 className="text-xl font-bold mb-2">Reviews:</h3>
+        <h3 className="text-xl font-bold mb-2 bg-amber-400 text-white rounded-xl px-1 w-fit">
+          Reviews:
+        </h3>
         {reviewsList.length === 0 ? (
-          <p>No reviews yet.</p>
+          <ReactTyped
+            strings={["No reviews yet."]}
+            typeSpeed={40}
+            backSpeed={50}
+            className="font-poppins text-lg" 
+          ></ReactTyped>
         ) : (
           <ul>
             {reviewsList.map((review, index) => (
