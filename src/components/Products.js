@@ -9,8 +9,8 @@ const Products = ({ item }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (text.length > 100) {
-      setDisplayText(text.slice(0, 80) + "...");
+    if (text.length > 10) {
+      setDisplayText(text.slice(0, 20) + "...");
     } else {
       setDisplayText(text);
     }
@@ -19,8 +19,8 @@ const Products = ({ item }) => {
   const [displayHead, setDisplayHead] = useState(head);
 
   useEffect(() => {
-    if (head.length > 40) {
-      setDisplayHead(head.slice(0, 40) + "...");
+    if (head.length > 10) {
+      setDisplayHead(head.slice(0, 10) + "...");
     } else {
       setDisplayHead(head);
     }
@@ -38,7 +38,7 @@ const Products = ({ item }) => {
       onClick={handleClick}
       className="min-w-[280px] stripe item-center max-h-[400px] border-2 border-black bg-sky-50 h-fit hover:scale-110 transition-all duration-500 p-5 rounded-md"
     >
-      <div className="flex justify-center my-[1rem] h-[9rem]">
+      <div className="flex justify-center my-[1rem] w-[15rem] h-[9rem]">
         <img className="flex  rounded-md" src={item.thumbnail} />
       </div>
       <div className="bg-[#00246B] w-full h-1 my-2"></div>

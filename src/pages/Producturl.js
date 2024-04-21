@@ -147,24 +147,33 @@ const Producturl = ({ user }) => {
       showCart();
     }
   }, []);
+
+
+
+  
   return (
     <div className="bg-sky-200 ">
       <div className=" flex flex-col justify-center items-center">
-        <div className="flex flex-wrap justify-center items-start gap-x-10">
+        <div className="flex flex-wrap justify-center items-start gap-x-10 mt-[2rem]">
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1 }}
           >
-            <div className="max-w-[25rem] rounded-md bg-sky-100 p-1 mt-5 aspect-square flex items-center justify-center object-cover">
-              <img className="max-h-full max-w-full" src={item.thumbnail}></img>
+            <div className="lg:max-w-[30rem] sm:max-w-[25rem] xs:max-w-[21rem] rounded-md bg-sky-100 p-1 mt-5 aspect-square flex flex-col items-center justify-center object-cover">
+              <p className="font-bold text-3xl font-poppins mb-[2rem] bg-blue-900 text-white p-2 rounded-md">
+                {item.productName}
+              </p>
+              <img className="max-h-full max-w-full px-[1rem]" src={item.thumbnail}></img>
+              <div>
+            </div>
             </div>
           </motion.div>
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1 }}
-            className="w-fit mt-9 relative flex flex-col gap-y-5 justify-center items-center font-poppins py-2 bg-sky-50 rounded-md "
+            className="w-fit mt-9 relative flex flex-col sm:max-w-[25rem] xs:max-w-[21rem] px-[2rem] gap-y-5 justify-center items-center font-poppins py-[2rem] bg-sky-50 rounded-2xl "
           >
             <div className="absolute right-0 -top-8">
               <p className="mt-[1rem] text-xl font-semibold bg-green-500 text-white p-2 rounded-full">
@@ -172,15 +181,15 @@ const Producturl = ({ user }) => {
               </p>
             </div>
             <div>
-              <p className="font-bold text-3xl font-poppins mt-3 bg-fuchsia-600 text-white p-2 rounded-md">
+              <p className="font-bold text-3xl font-poppins mt-3 px-[2rem] bg-purple-600 text-white p-2 rounded-md">
                 {item.productName}
               </p>
             </div>
-            <div className="text-xl font-bold bg-violet-800 text-white p-[0.5rem] rounded-full">
+            <div className="text-lg font-semibold bg-violet-800 text-white p-[0.5rem] rounded-full">
               {item && item.category && <p>Category : {item.category.name}</p>}
             </div>
             <div>
-              <p className="">{item.productDescription}</p>
+              <p className="text-wrap">{item.productDescription}</p>
             </div>
             <div className="flex mt-[2rem]">
               {cart.some((p) => p._id === item._id) ? (
@@ -255,18 +264,19 @@ const Producturl = ({ user }) => {
               </div>
             )}
           </motion.div>
-          <div className="ml-[3rem] mt-3 flex flex-col justify-center items-center">
+          <div className="ml-[3rem] mt-[6rem] flex flex-col justify-center items-center">
             <div className="flex justify-center">
               <ReactTyped
                 strings={["Similar Category Product"]}
-                typeSpeed={40}
+                typeSpeed={200}
                 backSpeed={50}
+                loop
                 className=" text-3xl text-center bg-black text-white p-1 px-2 rounded-md font-poppins"
               ></ReactTyped>
             </div>
-            <div className="mt-3  w-fit px-2 py-4 ">
+            <div className="mt-3  w-fit sm:px-2 py-4 ">
               {posts.length > 0 ? (
-                <div className="flex flex-row justify-center item-center px-[3rem]  w-full  flex-wrap gap-x-8 gap-y-9">
+                <div className="flex flex-row justify-center item-center sm:px-[3rem]  w-full  flex-wrap gap-x-8 gap-y-9">
                   {posts.map((item) => (
                     <Products key={item.id} item={item}></Products>
                   ))}

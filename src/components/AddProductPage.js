@@ -127,7 +127,7 @@ const Productpage = ({ showAddPage, setShowAddPage }) => {
           <label htmlFor="thumbnailImage" className="cursor-pointer blink">
             Select Image
           </label>
-          {imageUrl && <img src={imageUrl} className=" mt-0 p-1" />}
+          {imageUrl && <img src={imageUrl} className=" mt-0 p-1 max-w-[30rem]" />}
         </div>
 
         <div className="">
