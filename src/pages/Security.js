@@ -2,7 +2,7 @@ import { react } from "react";
 
 const Security = ()=>{
     return(
-        <div className="lg:w-[60%] xs:mx-[7%] md:mx-[15%] lg:mx-[20%] bg-slate-100 h-auto pb-[2rem]">
+        <div className="lg:w-[60%] xs:mx-[7%] md:mx-[15%] lg:mx-[20%] bg-gradient-to-br from-sky-200 to-white h-auto pb-[2rem]">
             <h1 className="text-lg font-semibold text-center pt-[2rem]">Security</h1>
             <p className="px-[4rem] pt-[1rem]">At Huehub, we take the security of our users' information very seriously. We employ various measures to ensure the protection of your data and maintain the integrity of our platform. Below are some of the security practices we have implemented:.</p>
 

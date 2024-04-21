@@ -49,10 +49,10 @@ const SellerPage = (props) => {
   }
 
   return (
-    <div className="flex-row justify-center relative">
-      <div className="flex flex-row rounded-3xl border-2 justify-center mx-[25%] my-[3rem] py-[0.5rem] boder-2 border-black">
+    <div className="flex-row justify-center h-screen overflow-y-auto bg-gradient-to-br pt-[3rem] from-sky-200 to-white">
+      <div className="flex flex-row rounded-3xl border-2 justify-center mx-[25%]  py-[0.5rem] boder-2 border-black">
         <input
-          className="w-[90%] py-[0.3rem] border-none focus:border-none focus:outline-none"
+          className="w-[90%] py-[0.3rem] bg-inherit border-none focus:border-none focus:outline-none"
           type="text"
           placeholder="Explore your passion: Search for your favorite art style or artist here..."
           // value=""

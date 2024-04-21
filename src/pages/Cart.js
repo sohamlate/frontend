@@ -105,7 +105,7 @@ const Cart = ({user})=>{
    
 
     return (
-      <div>
+      <div className="bg-gradient-to-br from-sky-200 to-white">
           <h1 className="ml-[3.5rem] mt-[2rem] mb-[1rem] font-bold text-xl">Your Shopping Basket</h1>
         <div className="ml-[3rem] flex">
 

@@ -106,7 +106,7 @@ const Navbar = ({ user, setUser, isLoggedIn, setIsLoggedIn }) => {
         {isLoggedIn && (
           
           <div className="relative ">
-            <img  onClick={() => setIsClick(!isclick)} className="w-[2rem] rounded-full " src={user.image}></img>
+            <img  onClick={() => setIsClick(!isclick)} className="w-[2rem] h-[2rem] rounded-full " src={user.image}></img>
             <div className="absolute right-0  z-50">
               {isclick && (
                 <Profile

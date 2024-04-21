@@ -49,13 +49,13 @@ const MyProduct = ({user})=>{
    console.log("fdscvdsv",posts);
 
     return (
-        <div className="">
+        <div className="bg-gradient-to-br h-screen overflow-y-auto from-sky-200 to-white">
 
-            <h1 className="font-bold text-xl ml-[44%] my-[2rem] ">My Products</h1>
+            <h1 className="font-bold text-xl ml-[44%] pt-[2rem] mb-[2rem] ">My Products</h1>
 
-            <div className="flex flex-row rounded-3xl border-2 justify-center mx-[25%] mb-[3rem] py-[0.5rem] boder-2 border-black">
+            <div className="flex flex-row rounded-3xl border-2 justify-center sm:mx-[25%] mb-[3rem] py-[0.5rem] boder-2 border-black">
                 <input 
-                className="w-[90%] py-[0.3rem] border-none focus:border-none focus:outline-none" 
+                className="w-[90%] py-[0.3rem] border-none bg-inherit focus:border-none focus:outline-none" 
                 type="text" 
                 placeholder="Explore your passion: Search for your favorite art style or artist here..."
                 // value=""

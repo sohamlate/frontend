@@ -198,7 +198,7 @@ const Home = ({user})=>{
               <h2 className="text-xl font-bold mb-4">Consumer Policy</h2>
               <Link to="/term" className="block text-blue-700 hover:underline">Term of use</Link>
               <Link to="/security" className="block text-blue-700 hover:underline">Security</Link>
-              <Link to="/privacy" className="block text-blue-700 hover:underline">Privacy</Link>
+              <Link to="/piracy" className="block text-blue-700 hover:underline">Privacy</Link>
             </div>
           </div>
           {/* Column 4 */}

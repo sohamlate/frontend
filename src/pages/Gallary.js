@@ -120,13 +120,13 @@ const Gallary = () => {
   console.log("PRINTIJNNG LENFG", posts.length);
 
   return (
-    <div className=" bg-sky-200 h-screen overflow-y-auto pt-[2rem]">
+    <div className=" bg-gradient-to-br from-sky-200 to-white h-screen overflow-y-auto pt-[2rem] pb-[2rem]">
       <h1 className="font-bold text-xl xs:ml-[32%] xs1:ml-[37%] sm:ml-[45%]  mb-[2rem]">Product Gallery</h1>
 
       <div className="flex flex-row rounded-3xl border-2  justify-center xs:mx-[5%] sm:mx-[25%] mb-[3rem] py-[0.5rem] boder-2 border-black min-w-[280px]">
         <input
           onChange={handleSearchChange}
-          className="w-[90%] bg-sky-200 text-black py-[0.3rem] border-none focus:outline-none min-w-[280px]"
+          className="w-[90%] bg-inherit text-black py-[0.3rem] border-none focus:outline-none min-w-[280px]"
           type="text"
           placeholder="Explore your passion: Search for your favorite art style or artist here..."
           
@@ -183,7 +183,7 @@ const Gallary = () => {
         {loading ? (
           <Spinner />
         ) : posts.length > 0 ? (
-          <div className="flex flex-row justify-center item-center w-full h-[100vh] flex-wrap gap-x-5 gap-y-9">
+          <div className="flex flex-row justify-center  item-center w-full h-[100vh] px-[2rem] flex-wrap gap-x-5 gap-y-9">
             {posts.map((item, index) => (
               <motion.div
                 key={item.id}

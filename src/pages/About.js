@@ -4,7 +4,7 @@ import { react } from "react";
 
 const About = ()=>{
     return(
-            <div className="lg:w-[60%] xs:mx-[7%] md:mx-[15%] lg:mx-[20%] bg-slate-100 h-auto pb-[2rem]">
+            <div className="lg:w-[60%] xs:mx-[7%] md:mx-[15%] lg:mx-[20%] bg-gradient-to-br from-sky-200 to-white h-auto pb-[2rem]">
                 <h1 className="text-lg font-semibold text-center pt-[2rem]">About Us: Empowering Artists, Connecting Communities</h1>
                 <p className="px-[4rem] pt-[1rem]">At ArtHub, we're passionate about art and committed to empowering artists to share their talents with the world. Our journey began with a simple yet ambitious goal: to create a platform where artists could thrive, collectors could discover new treasures, and art lovers could connect with like-minded individuals.</p>
 

@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
-
+import EditProduct from "../components/EditProduct";
+import { motion } from "framer-motion";
 
 const SellerProduct = ({ user }) => {
   const location = useLocation();
+  const [showEditPage, setShowEditPage] = useState(false);
   const { item } = location.state || {};
   console.log("item", item);
   console.log(item.category);
@@ -24,12 +26,12 @@ const SellerProduct = ({ user }) => {
       console.log("response of deletion", response);
     } catch (error) {
       console.log("Error in delting product", error);
-      toast.error(error.response.data.message); 
+      toast.error(error.response.data.message);
     }
   };
   return (
-    <div className="flex flex-row gap-x-[10rem]">
-      <div className="h-[50rem] w-[20rem] ml-[5rem] mt-[2rem]">
+    <div className="flex flex-row gap-x-[10rem] relative  h-screen overflow-y-auto bg-gradient-to-br from-sky-200 to-white">
+      <div className=" w-[20rem] ml-[5rem] mt-[2rem]">
         <img src={item.thumbnail}></img>
       </div>
       <div className="w-[40%]">
@@ -43,9 +45,27 @@ const SellerProduct = ({ user }) => {
           >
             Delete Item{" "}
           </button>
-          <button className=" border  px-[5%]   h-[2.5rem] mx-[1rem] w-[10rem] rounded-md shadow hover:shadow-inner text-white font-semibold bg-blue-600 hover:shadow-white">
+          <button
+            onClick={() => setShowEditPage(!showEditPage)}
+            className=" border  px-[5%]   h-[2.5rem] mx-[1rem] w-[10rem] rounded-md shadow hover:shadow-inner text-white font-semibold bg-blue-600 hover:shadow-white"
+          >
             Edit Item{" "}
           </button>
+        </div>
+        <div className="absolute top-5 left-[30%] w-[60%] ">
+          {showEditPage && (
+            <motion.div
+              initial={{ scale: 0 }} 
+              animate={{ scale: 1 }} 
+              transition={{ duration: 0.5 }} 
+            >
+              <EditProduct
+                item={item}
+                showEditPage={showEditPage}
+                setShowEditPage={setShowEditPage}
+              />
+            </motion.div>
+          )}
         </div>
       </div>
     </div>

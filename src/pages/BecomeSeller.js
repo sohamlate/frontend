@@ -44,7 +44,7 @@ const BecomeSeller = ({setIsLoggedIn,user,setUser})=>{
 
 
     return(
-        <div className="flex flex-col w-[27%] h-[34rem] mt-[1rem] ml-[40%] border-[0.2rem] bg-white rounded-md text-md pb-[18%] px-[1rem]">
+        <div className="flex flex-col w-[27%] h-[34rem] mt-[1rem] ml-[40%] border-[0.2rem] bg-gradient-to-br from-sky-200 to-white rounded-md text-md pb-[18%] px-[1rem]">
         <h1 className="text-2xl text-slate-600 mt-[2rem] text-center  mr-2">Welcome to Huehub Artist Community!</h1>
         <p className="font-thin mt-[0.5rem] text-center mr-2 px-[1rem]">Please enter your login credentials details to ensure it's you</p>
   

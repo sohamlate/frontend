@@ -26,6 +26,7 @@ const Producturl = ({ user }) => {
         { productId }
       );
       setitem(response.data.productDetails[0]);
+      console.log(item);
       if (response.data.productDetails[0].category) {
         setPosts(response.data.productDetails[0].category.products);
       }
@@ -256,7 +257,7 @@ const Producturl = ({ user }) => {
                   Owner of : {item.productName}
                 </p>
                 <button className=" border  px-[5%] py-[3%] mt-5 h-[3rem] w-[17rem] rounded-md shadow hover:shadow-inner text-white font-semibold bg-blue-600 hover:shadow-white">
-                  <a href={`https://wa.me/${item.seller.contactNumber}`}>
+                  <a href={`https://wa.me/${item.seller.additionalDetail.contactNo}`}>
                     {" "}
                     Message Seller{" "}
                   </a>

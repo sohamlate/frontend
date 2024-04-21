@@ -28,7 +28,7 @@ const ResetPass = ()=>{
 
 
     return (
-        <div className="flex flex-col w-[27%] mt-5 h-[13rem] ml-[40%] border-[0.2rem] bg-white rounded-md text-md pb-[18%] px-[1rem]">
+        <div className="flex flex-col w-[27%] mt-5 h-[13rem] ml-[40%] border-[0.2rem] bg-gradient-to-br from-sky-200 to-white rounded-md text-md pb-[18%] px-[1rem]">
         <h1 className="text-2xl text-slate-600 mt-[2rem] text-center  mr-2">Welcome to Huehub!</h1>
         <p className="font-thin mt-[0.3rem] text-center  mr-2">Please enter your details</p>
 
