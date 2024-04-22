@@ -30,7 +30,7 @@ const CategoriesProducts = ({item})=>{
     }
     return (
         <div className="flex justify-center ">
-                 <div   onClick={()=> categoryHandler(item)} className="shadow mb-[3rem] p-2 rounded-[9%] hover:scale-105 transition-all duration-300 hover:shadow-slate-400 sm:w-[15rem] sm:h-[19rem] xs:w-[10rem] xs:h-[15rem]"> 
+                 <div   onClick={()=> categoryHandler(item)} className=" bg-white   h-fit shadow mb-[3rem] p-2 rounded-[9%] hover:scale-105 transition-all duration-300 hover:shadow-slate-400 sm:w-[15rem] sm:h-[19rem] xs:w-[10rem] xs:h-[15rem]"> 
                 
                 <img className="sm:w-[18rem] sm:h-[16rem] xs:h-[12rem] xs:w-[10rem] rounded-[9%]" src={item.image} alt="prints"></img>
                 <p className="text-center mt-[0.5rem]">{item.name}</p>
